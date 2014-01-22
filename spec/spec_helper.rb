@@ -1,5 +1,5 @@
 require 'rails/all'
 require 'rspec/rails'
 require 'rspec/autorun'
-
+require 'simplecov'
 require 'ama_validators'
