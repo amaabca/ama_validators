@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'factories/profiles.rb'
 
 describe CreditCardFormatValidator do
