@@ -1,4 +1,4 @@
-require 'factories/profiles.rb'
+require 'factories/Profiles.rb'
 
 describe CreditCardFormatValidator do
 
