@@ -1,5 +1,6 @@
 # AmaValidators
 
+[![Build Status](https://api.travis-ci.org/amaabca/ama_validators.png?branch=master)](https://travis-ci.org/amaabca/ama_validators)
 TODO: Write a gem description
 
 ## Installation
