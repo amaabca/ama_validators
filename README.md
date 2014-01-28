@@ -6,7 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/amaabca/ama_validators/badge.png)](https://coveralls.io/r/amaabca/ama_validators)
 [![Dependency Status](https://gemnasium.com/amaabca/ama_validators.png)](https://gemnasium.com/amaabca/ama_validators)
 
-TODO: Write a gem description
+Compile the following validators: - Credit card - Email - Membership number - Phone number - Postal code
 
 ## Installation
 
