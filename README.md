@@ -1,5 +1,6 @@
 # AmaValidators
 
+[![Code Climate](https://codeclimate.com/github/amaabca/ama_validators.png)](https://codeclimate.com/github/amaabca/ama_validators)
 [![Build Status](https://api.travis-ci.org/amaabca/ama_validators.png?branch=master)](https://travis-ci.org/amaabca/ama_validators)
 [![Coverage Status](https://coveralls.io/repos/amaabca/ama_validators/badge.png)](https://coveralls.io/r/amaabca/ama_validators)
 [![Dependency Status](https://gemnasium.com/amaabca/ama_validators.png)](https://gemnasium.com/amaabca/ama_validators)
