@@ -7,8 +7,8 @@ describe EmailFormatValidator do
   let( :attribute ) { :email }
   let (:object) { Profile.new }
 
-  invalid_addresses = %w[user@fail,com user_at.com user_fail.com user@ @fail.com]
-  valid_addresses = %w[user@pass.com user_user@pass.com user.user@pass.com]
+  invalid_addresses = %w[user@fail,com user_at.com user_fail.com user@ @fail.com ryan`1`@system88.com]
+  valid_addresses = %w[user@pass.com user_user@pass.com user.user@pass.com ryan+stage@systme88.com]
 
 
   context 'Wrong email format' do
