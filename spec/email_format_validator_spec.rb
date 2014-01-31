@@ -36,7 +36,7 @@ describe EmailFormatValidator do
   context 'Correct email format' do
 
     context 'No message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { attributes: attribute } )
         valid_addresses.each do |valid_address|
           expect(n.validate_each(object, attribute, valid_address)).to equal(nil)
@@ -45,7 +45,7 @@ describe EmailFormatValidator do
     end
 
     context 'Message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
         valid_addresses.each do |valid_address|
           expect(n.validate_each(object, attribute, valid_address)).to equal(nil)

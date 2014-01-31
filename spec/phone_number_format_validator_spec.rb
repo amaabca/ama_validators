@@ -35,7 +35,7 @@ describe PhoneNumberFormatValidator do
   context 'Correct phone number format' do
 
     context 'No message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { attributes: attribute } )
         valid_phone_numbers.each do |valid_phone_number|
           expect(n.validate_each(object, attribute, valid_phone_number)).to equal(nil)
@@ -44,7 +44,7 @@ describe PhoneNumberFormatValidator do
     end
 
     context 'Message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
         valid_phone_numbers.each do |valid_phone_number|
           expect(n.validate_each(object, attribute, valid_phone_number)).to equal(nil)

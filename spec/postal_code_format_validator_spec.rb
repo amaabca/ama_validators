@@ -35,7 +35,7 @@ describe PostalCodeFormatValidator do
   context 'Correct postal code format' do
 
     context 'No message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { attributes: attribute } )
         valid_postal_codes.each do |valid_postal_code|
           expect(n.validate_each(object, attribute, valid_postal_code)).to equal(nil)
@@ -44,7 +44,7 @@ describe PostalCodeFormatValidator do
     end
 
     context 'Message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
         valid_postal_codes.each do |valid_postal_code|
           expect(n.validate_each(object, attribute, valid_postal_code)).to equal(nil)

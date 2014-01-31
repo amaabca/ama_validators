@@ -36,7 +36,7 @@ describe MembershipNumberFormatValidator do
   context 'Correct membership number format' do
 
     context 'No message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { attributes: attribute } )
         valid_membership_numbers.each do |valid_membership_number|
           expect(n.validate_each(object, attribute, valid_membership_number)).to equal(nil)
@@ -45,7 +45,7 @@ describe MembershipNumberFormatValidator do
     end
 
     context 'Message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
         valid_membership_numbers.each do |valid_membership_number|
           expect(n.validate_each(object, attribute, valid_membership_number)).to equal(nil)

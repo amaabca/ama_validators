@@ -36,7 +36,7 @@ describe CreditCardFormatValidator do
   context 'Correct credit card format' do
 
     context 'No message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { attributes: attribute } )
         valid_credit_card_numbers.each do |valid_credit_card_number|
           expect(n.validate_each(object, attribute, valid_credit_card_number)).to equal(nil)
@@ -45,7 +45,7 @@ describe CreditCardFormatValidator do
     end
 
     context 'Message is sent on the options' do
-      it 'it do not return error message' do
+      it 'it does not return error message' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
         valid_credit_card_numbers.each do |valid_credit_card_number|
           expect(n.validate_each(object, attribute, valid_credit_card_number)).to equal(nil)
