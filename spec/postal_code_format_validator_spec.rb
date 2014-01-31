@@ -1,4 +1,4 @@
-require 'factories/Profiles.rb'
+require 'factories/profiles.rb'
 
 describe PostalCodeFormatValidator do
 
