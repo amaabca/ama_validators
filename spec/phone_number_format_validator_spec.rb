@@ -7,8 +7,8 @@ describe PhoneNumberFormatValidator do
   let( :attribute ) { :phone_number }
   let (:object) { Profile.new }
 
-  invalid_phone_numbers = %w[123 780123456 1234456 666 mynumber]
-  valid_phone_numbers = %w[587-555-5555 5875555555 1234567890 780myphone 17809172969 (780)9172969 7809172969 +17809172969 +1(780)9172969]
+  invalid_phone_numbers = %w[123 780123456 1234456 666 mynumber 780myphone]
+  valid_phone_numbers = %w[587-555-5555 5875555555 1234567890 17809172969 (780)9172969 7809172969 +17809172969 +1(780)9172969]
 
   context 'Wrong phone number format' do
 
