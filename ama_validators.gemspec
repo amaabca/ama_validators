@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ruben.a.estevez@gmail.com"]
   spec.description   = "Compile the following validators: - Credit card - Email - Membership number - Phone number - Postal code"
   spec.summary       = "This gem will compile the following validators - Credit card - Email - Membership number - Phone number - Postal code. With this gem there is no need for the validators classes."
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/amaabca/ama_validators"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
