@@ -7,20 +7,26 @@ describe PostalCodeFormatValidator do
   let( :attribute ) { :postal_code }
   let (:object) { Profile.new }
 
+  invalid_postal_codes = %w[2w2e3e b4hk6j t556v7 x2ceee t3x6sv T5j5M/]
+  valid_postal_codes = %w[T5w4g5 T5W4G5 X4H3J9 t6J4M5 x3B5X8]
 
   context 'Wrong postal code format' do
 
     context 'No message is sent on the options' do
       it 'it returns error message expecified on the validator' do
         n  = subject.new( { attributes: attribute } )
-        expect(n.validate_each(object, attribute, 'TTJ4M5')).to include('enter a valid AB or NT postal code (e.g. T2T 2T2)')
+        invalid_postal_codes.each do |invalid_postal_code|
+          expect(n.validate_each(object, attribute, invalid_postal_code)).to include('enter a valid AB or NT postal code (e.g. T2T 2T2)')
+        end
       end
     end
 
     context 'Message is sent on the options' do
       it 'it returns error message expecified on the options' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
-        expect(n.validate_each(object, attribute, 'G7J4M5')).to include('Test error message')
+        invalid_postal_codes.each do |invalid_postal_code|
+          expect(n.validate_each(object, attribute, invalid_postal_code)).to include('Test error message')
+        end
       end
     end
 
@@ -31,14 +37,18 @@ describe PostalCodeFormatValidator do
     context 'No message is sent on the options' do
       it 'it do not return error message' do
         n  = subject.new( { attributes: attribute } )
-        expect(n.validate_each(object, attribute, 'T6J4M5')).to equal(nil)
+        valid_postal_codes.each do |valid_postal_code|
+          expect(n.validate_each(object, attribute, valid_postal_code)).to equal(nil)
+        end
       end
     end
 
     context 'Message is sent on the options' do
       it 'it do not return error message' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
-        expect(n.validate_each(object, attribute, 'T6J4M5')).to equal(nil)
+        valid_postal_codes.each do |valid_postal_code|
+          expect(n.validate_each(object, attribute, valid_postal_code)).to equal(nil)
+        end
       end
     end
 

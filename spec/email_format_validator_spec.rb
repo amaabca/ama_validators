@@ -7,20 +7,27 @@ describe EmailFormatValidator do
   let( :attribute ) { :email }
   let (:object) { Profile.new }
 
+  invalid_addresses = %w[user@fail,com user_at.com user_fail.com user@ @fail.com]
+  valid_addresses = %w[user@pass.com user_user@pass.com user.user@pass.com]
+
 
   context 'Wrong email format' do
 
     context 'No message is sent on the options' do
       it 'it returns error message expecified on the validator' do
         n  = subject.new( { attributes: attribute } )
-        expect(n.validate_each(object, attribute, 'fail@com')).to include('enter a valid email address (e.g. name@example.com)')
+        invalid_addresses.each do |invalid_address|
+          expect(n.validate_each(object, attribute, invalid_address)).to include('enter a valid email address (e.g. name@example.com)')
+        end
       end
     end
 
     context 'Message is sent on the options' do
       it 'it returns error message expecified on the options' do
         n  = subject.new( { message: 'Test error message', attributes: :postal_code } )
-        expect(n.validate_each(object, attribute, 'fail.com')).to include('Test error message')
+        invalid_addresses.each do |invalid_address|
+          expect(n.validate_each(object, attribute, invalid_address)).to include('Test error message')
+        end
       end
     end
 
@@ -31,14 +38,18 @@ describe EmailFormatValidator do
     context 'No message is sent on the options' do
       it 'it do not return error message' do
         n  = subject.new( { attributes: attribute } )
-        expect(n.validate_each(object, attribute, 'no_fail@mail.com')).to equal(nil)
+        valid_addresses.each do |valid_address|
+          expect(n.validate_each(object, attribute, valid_address)).to equal(nil)
+        end
       end
     end
 
     context 'Message is sent on the options' do
       it 'it do not return error message' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
-        expect(n.validate_each(object, attribute, 'no_fail@mail.com')).to equal(nil)
+        valid_addresses.each do |valid_address|
+          expect(n.validate_each(object, attribute, valid_address)).to equal(nil)
+        end
       end
     end
 
