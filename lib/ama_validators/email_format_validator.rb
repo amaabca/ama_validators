@@ -8,7 +8,5 @@ class EmailFormatValidator < ActiveModel::EachValidator
   def doit(args = {})
     foo = args.fetch(:foo, 'foo')
     bar = foo == 'bar' ? foo : 'foobar'
-    return false
   end
-
 end
