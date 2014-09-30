@@ -6,8 +6,8 @@ require 'ama_validators/version'
 Gem::Specification.new do |spec|
   spec.name          = "ama_validators"
   spec.version       = AmaValidators::VERSION
-  spec.authors       = ["Ruben Estevez"]
-  spec.email         = ["ruben.a.estevez@gmail.com"]
+  spec.authors       = ["Michael van den Beuken", "Ruben Estevez", "Jordan Babe", "Mathieu Gilbert", "Ryan Jones", "Darko Dosenovic"]
+  spec.email         = ["michael.beuken@gmail.com", "ruben.a.estevez@gmail.com", "jorbabe@gmail.com", "mathieu.gilbert@ama.ab.ca", "ryan.michael.jones@gmail.com", "darko.dosenovic@ama.ab.ca"]
   spec.description   = "Compile the following validators: - Credit card - Email - Membership number - Phone number - Postal code"
   spec.summary       = "This gem will compile the following validators - Credit card - Email - Membership number - Phone number - Postal code. With this gem there is no need for the validators classes."
   spec.homepage      = "https://github.com/amaabca/ama_validators"
