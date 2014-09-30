@@ -22,8 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "rspec-instafail"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "pry-debugger"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "coveralls"
   spec.add_dependency "rails", ">= 3.0.0"
