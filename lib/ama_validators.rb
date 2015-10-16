@@ -7,5 +7,6 @@ module AmaValidators
   require 'ama_validators/credit_card_format_validator'
   require 'ama_validators/membership_number_format_validator'
   require 'ama_validators/phone_number_format_validator'
+  require 'ama_validators/province_validator'
 
 end
