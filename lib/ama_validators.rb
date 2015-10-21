@@ -9,4 +9,8 @@ module AmaValidators
   require 'ama_validators/phone_number_format_validator'
   require 'ama_validators/province_validator'
 
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
 end

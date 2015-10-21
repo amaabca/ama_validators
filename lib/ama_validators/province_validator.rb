@@ -9,6 +9,8 @@ class ProvinceValidator < ActiveModel::EachValidator
     end
   end
 
+  COUNTRIES = { canada: 'Canada', usa: 'United States of America', mexico: 'Mexico' }
+
   PROV_STATE = {
       canada: ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland', 'Nova Scotia',
                'Northwest Territories', 'Nunavut', 'Ontario', 'Prince Edward Island', 'Saskatchewan',
