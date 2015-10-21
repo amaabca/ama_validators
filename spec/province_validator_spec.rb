@@ -20,6 +20,15 @@ describe ProvinceValidator do
     end
   end
 
+  context 'province is in selected country with a string' do
+    let(:country) { 'canada' }
+    let(:province) { 'Alberta' }
+
+    it 'is valid' do
+      expect(subject).to be_valid
+    end
+  end
+
   context 'province is not in selected country' do
     let(:country) { :canada }
     let(:province) { 'Alabama' }
