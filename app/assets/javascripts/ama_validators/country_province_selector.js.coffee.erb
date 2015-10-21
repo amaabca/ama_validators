@@ -1,0 +1,33 @@
+class window.CountryProvinceSelector
+  constructor: (@country_select, @province_select) ->
+    _province_select = @province_select
+    _provinces = JSON.parse('<%= ProvinceValidator::PROV_STATE.to_json %>')
+    _countries = JSON.parse('<%= ProvinceValidator::COUNTRIES.to_json %>')
+
+    populateSelect(@country_select, _countries, false)
+
+    $(@country_select).change ->
+      province_names = _provinces[$(this).val()]
+      populateSelect(_province_select, province_names, false)
+
+window.populateSelect = (select_box, data, include_blank) ->
+  if ($.isEmptyObject(data))
+    select_box.closest('.row').hide()
+  else
+    select_box.closest('.row').show()
+
+  include_blank = if typeof include_blank != 'undefined' then include_blank else true
+
+  current_value = select_box.val()
+
+  select_box.html('')
+
+  if (include_blank)
+    select_box.prepend($("<option value='' selected='selected'></option>"))
+
+  $.each data, (key) ->
+    select_box.append($('<option></option>').val(key).html(data[key]))
+
+  if !(current_value == undefined || current_value == null) &&
+          current_value.length > 0 && $(select_box.selector + ' option').map(-> return this.value).get().indexOf(current_value)
+    select_box.val(current_value);
