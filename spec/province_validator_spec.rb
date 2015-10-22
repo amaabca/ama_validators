@@ -58,4 +58,16 @@ describe ProvinceValidator do
       expect(subject.errors[:province]).to_not be_empty
     end
   end
+
+  context 'country has no provinces' do
+    context 'province not specified' do
+      let(:country) { :mexico }
+      let(:province) { nil }
+
+      it 'is valid' do
+        expect(subject).to be_valid
+        expect(subject.errors[:province]).to be_empty
+      end
+    end
+  end
 end
