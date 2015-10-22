@@ -3,11 +3,13 @@
 
 class ProvinceValidator < ActiveModel::EachValidator
   def validate_each(object, attribute, value)
-    provinces = PROV_STATE[object.send(options[:country])]
+    provinces = PROV_STATE[object.send(options[:country]).to_sym]
     if !provinces.try(:include?, value)
-      object.errors[attribute] << (options[:message] || 'Province/State is in selected country.')
+      object.errors[attribute] << (options[:message] || 'Province/State should be in selected country.')
     end
   end
+
+  COUNTRIES = { canada: 'Canada', usa: 'United States of America', mexico: 'Mexico' }
 
   PROV_STATE = {
       canada: ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland', 'Nova Scotia',
