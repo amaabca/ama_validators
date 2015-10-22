@@ -11,6 +11,15 @@ describe ProvinceValidator do
 
   subject { Validatable.new({ country: country, province: province }) }
 
+  context 'province is in selected country as a string' do
+    let(:country) { 'canada' }
+    let(:province) { 'Alberta' }
+
+    it 'is valid' do
+      expect(subject).to be_valid
+    end
+  end
+
   context 'province is in selected country' do
     let(:country) { :canada }
     let(:province) { 'Alberta' }
