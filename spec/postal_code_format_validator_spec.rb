@@ -7,8 +7,8 @@ describe PostalCodeFormatValidator do
   let( :attribute ) { :postal_code }
   let (:object) { Profile.new }
 
-  invalid_postal_codes = %w[2w2e3e b4hk6j t556v7 x2ceee t3x6sv T5j5M/]
-  valid_postal_codes = %w[T5w4g5 T5W4G5 X4H3J9 t6J4M5 x3B5X8]
+  invalid_postal_codes = %w[2w2e3e b4hk6j t556v7 x2ceee t3x6sv T5j5M/ 123456]
+  valid_postal_codes = %w[T5w4g5 T5W4G5 X4H3J9 t6J4M5 x3B5X8 12345 12345-6789]
 
   context 'Wrong postal code format' do
 
