@@ -9,5 +9,6 @@ module AmaValidators
   require 'ama_validators/phone_number_format_validator'
   require 'ama_validators/province_validator'
   require 'ama_validators/name_format_validator'
+  require 'ama_validators/alphanumeric_name_format_validator'
 
 end
