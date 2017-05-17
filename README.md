@@ -10,26 +10,21 @@ Compile the following validators: - Credit card - Email - Membership number - Ph
 
 ## Installation
 
-Add this line to your Gemfile within your rails application:
+Add this line to your application's Gemfile:
 
     gem 'ama_validators'
 
 And then execute:
 
-    $ bundle install
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install ama_validators
 
 ## Usage
 
-Apply the validator to a model like so:
-
-```
-class TeamMember < ApplicationRecord
-  validates :email, presence: true, email_format: { allow_blank: false }
-end
-```
-
-All of the validators are here: https://github.com/amaabca/ama_validators/tree/master/lib/ama_validators/ 
-
+TODO: Write usage instructions here
 
 ## Contributing
 
