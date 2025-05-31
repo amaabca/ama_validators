@@ -17,7 +17,7 @@ describe MembershipNumberFormatValidator do
       it 'it returns error message expecified on the validator' do
         n  = subject.new( { attributes: attribute } )
         invalid_membership_numbers.each do |invalid_membership_number|
-          expect(n.validate_each(object, attribute, invalid_membership_number)).to include('must be a valid 16-digit membership number')
+          expect(n.validate_each(object, attribute, invalid_membership_number).message).to eq('must be a valid 16-digit membership number')
         end
       end
     end
@@ -26,7 +26,7 @@ describe MembershipNumberFormatValidator do
       it 'it returns error message expecified on the options' do
         n  = subject.new( { message: 'Test error message', attributes: :postal_code } )
         invalid_membership_numbers.each do |invalid_membership_number|
-          expect(n.validate_each(object, attribute, invalid_membership_number)).to include('Test error message')
+          expect(n.validate_each(object, attribute, invalid_membership_number).message).to eq('Test error message')
         end
       end
     end

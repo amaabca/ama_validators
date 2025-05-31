@@ -17,7 +17,7 @@ describe CreditCardFormatValidator do
       it 'it returns error message expecified on the validator' do
         n  = subject.new( { attributes: attribute } )
         invalid_credit_card_numbers.each do |invalid_credit_card_number|
-          expect(n.validate_each(object, attribute, invalid_credit_card_number)).to include('enter a valid credit card number (Visa or Mastercard)')
+          expect(n.validate_each(object, attribute, invalid_credit_card_number).message).to eq('enter a valid credit card number (Visa or Mastercard)')
         end
       end
     end
@@ -26,7 +26,7 @@ describe CreditCardFormatValidator do
       it 'it returns error message expecified on the options' do
         n  = subject.new( { message: 'Test error message', attributes: :postal_code } )
         invalid_credit_card_numbers.each do |invalid_credit_card_number|
-          expect(n.validate_each(object, attribute, invalid_credit_card_number)).to include('Test error message')
+          expect(n.validate_each(object, attribute, invalid_credit_card_number).message).to eq('Test error message')
         end
       end
     end

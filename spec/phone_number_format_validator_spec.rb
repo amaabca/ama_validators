@@ -16,7 +16,7 @@ describe PhoneNumberFormatValidator do
       it 'it returns error message expecified on the validator' do
         n  = subject.new( { attributes: attribute } )
         invalid_phone_numbers.each do |invalid_phone_number|
-          expect(n.validate_each(object, attribute, invalid_phone_number)).to include('enter a valid 10-digit number (e.g. 587-555-5555)')
+          expect(n.validate_each(object, attribute, invalid_phone_number).message).to eq('enter a valid 10-digit number (e.g. 587-555-5555)')
         end
       end
     end
@@ -25,7 +25,7 @@ describe PhoneNumberFormatValidator do
       it 'it returns error message expecified on the options' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
         invalid_phone_numbers.each do |invalid_phone_number|
-          expect(n.validate_each(object, attribute, invalid_phone_number)).to include('Test error message')
+          expect(n.validate_each(object, attribute, invalid_phone_number).message).to eq('Test error message')
         end
       end
     end

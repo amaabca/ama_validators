@@ -13,7 +13,7 @@ describe AlphanumericNameFormatValidator do
       it 'it returns error message expecified on the validator' do
         n  = subject.new( { attributes: :first_name } )
         invalid_names.each do |invalid_name|
-          expect(n.validate_each(object, :first_name, invalid_name)).to include("We're sorry your name cannot contain any special characters")
+          expect(n.validate_each(object, :first_name, invalid_name).message).to eq("We're sorry your name cannot contain any special characters")
         end
       end
     end
@@ -22,7 +22,7 @@ describe AlphanumericNameFormatValidator do
       it 'it returns error message expecified on the options' do
         n  = subject.new( { message: 'Test error message', attributes: :first_name } )
         invalid_names.each do |invalid_name|
-          expect(n.validate_each(object, :first_name, invalid_name)).to include('Test error message')
+          expect(n.validate_each(object, :first_name, invalid_name).message).to eq('Test error message')
         end
       end
     end
