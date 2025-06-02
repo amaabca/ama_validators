@@ -17,7 +17,7 @@ describe EmailFormatValidator do
       it 'it returns error message expecified on the validator' do
         n  = subject.new( { attributes: attribute } )
         invalid_addresses.each do |invalid_address|
-          expect(n.validate_each(object, attribute, invalid_address)).to include('enter a valid email address (e.g. name@example.com)')
+          expect(n.validate_each(object, attribute, invalid_address).message).to eq('enter a valid email address (e.g. name@example.com)')
         end
       end
     end
@@ -26,7 +26,7 @@ describe EmailFormatValidator do
       it 'it returns error message expecified on the options' do
         n  = subject.new( { message: 'Test error message', attributes: :postal_code } )
         invalid_addresses.each do |invalid_address|
-          expect(n.validate_each(object, attribute, invalid_address)).to include('Test error message')
+          expect(n.validate_each(object, attribute, invalid_address).message).to eq('Test error message')
         end
       end
     end

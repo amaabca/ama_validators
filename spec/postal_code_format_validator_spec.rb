@@ -16,7 +16,7 @@ describe PostalCodeFormatValidator do
       it 'it returns error message expecified on the validator' do
         n  = subject.new( { attributes: attribute } )
         invalid_postal_codes.each do |invalid_postal_code|
-          expect(n.validate_each(object, attribute, invalid_postal_code)).to include('enter a valid AB or NT postal code (e.g. T4C 1A5)')
+          expect(n.validate_each(object, attribute, invalid_postal_code).message).to eq('enter a valid AB or NT postal code (e.g. T4C 1A5)')
         end
       end
     end
@@ -25,7 +25,7 @@ describe PostalCodeFormatValidator do
       it 'it returns error message expecified on the options' do
         n  = subject.new( { message: 'Test error message', attributes: attribute } )
         invalid_postal_codes.each do |invalid_postal_code|
-          expect(n.validate_each(object, attribute, invalid_postal_code)).to include('Test error message')
+          expect(n.validate_each(object, attribute, invalid_postal_code).message).to eq('Test error message')
         end
       end
     end

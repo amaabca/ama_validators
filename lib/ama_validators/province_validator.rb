@@ -5,7 +5,7 @@ class ProvinceValidator < ActiveModel::EachValidator
   def validate_each(object, attribute, value)
     provinces = PROV_STATE[object.send(options[:country]).to_sym]
     if provinces.present? && !provinces.include?(value)
-      object.errors[attribute] << (options[:message] || 'Province/State should be in selected country.')
+      object.errors.add(attribute, options[:message] || 'Province/State should be in selected country.')
     end
   end
 
